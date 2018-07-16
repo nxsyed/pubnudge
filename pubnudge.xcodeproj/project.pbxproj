@@ -47,6 +47,7 @@
 		8033C07A20FD140F009E61DD /* pubnudgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pubnudgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8033C07E20FD140F009E61DD /* pubnudgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pubnudgeUITests.swift; sourceTree = "<group>"; };
 		8033C08020FD140F009E61DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8033C08C20FD17A7009E61DD /* pubnudge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pubnudge.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		8033C05D20FD140B009E61DD /* pubnudge */ = {
 			isa = PBXGroup;
 			children = (
+				8033C08C20FD17A7009E61DD /* pubnudge.entitlements */,
 				8033C05E20FD140B009E61DD /* AppDelegate.swift */,
 				8033C06020FD140B009E61DD /* ViewController.swift */,
 				8033C06220FD140B009E61DD /* Main.storyboard */,
@@ -193,6 +195,11 @@
 				TargetAttributes = {
 					8033C05A20FD140B009E61DD = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					8033C06E20FD140F009E61DD = {
 						CreatedOnToolsVersion = 10.0;
@@ -432,7 +439,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = pubnudge/pubnudge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8XP4D6N55Z;
 				INFOPLIST_FILE = pubnudge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,7 +458,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = pubnudge/pubnudge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8XP4D6N55Z;
 				INFOPLIST_FILE = pubnudge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
