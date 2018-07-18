@@ -14,6 +14,7 @@
 		8033C06920FD140F009E61DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8033C06720FD140F009E61DD /* LaunchScreen.storyboard */; };
 		8033C07420FD140F009E61DD /* pubnudgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033C07320FD140F009E61DD /* pubnudgeTests.swift */; };
 		8033C07F20FD140F009E61DD /* pubnudgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033C07E20FD140F009E61DD /* pubnudgeUITests.swift */; };
+		969AD3B9B47BAEAE64F5AC60 /* Pods_pubnudge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C36E9F3AC9B0638D741F37 /* Pods_pubnudge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F48A455B75CD4C14845F937 /* Pods-pubnudge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pubnudge.release.xcconfig"; path = "Pods/Target Support Files/Pods-pubnudge/Pods-pubnudge.release.xcconfig"; sourceTree = "<group>"; };
 		8033C05B20FD140B009E61DD /* pubnudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pubnudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8033C05E20FD140B009E61DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8033C06020FD140B009E61DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +50,8 @@
 		8033C07E20FD140F009E61DD /* pubnudgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pubnudgeUITests.swift; sourceTree = "<group>"; };
 		8033C08020FD140F009E61DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8033C08C20FD17A7009E61DD /* pubnudge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pubnudge.entitlements; sourceTree = "<group>"; };
+		E7228ACBC12458EF236659B1 /* Pods-pubnudge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pubnudge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pubnudge/Pods-pubnudge.debug.xcconfig"; sourceTree = "<group>"; };
+		F3C36E9F3AC9B0638D741F37 /* Pods_pubnudge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pubnudge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969AD3B9B47BAEAE64F5AC60 /* Pods_pubnudge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52B6F84B67BA9803C9FFE0E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7228ACBC12458EF236659B1 /* Pods-pubnudge.debug.xcconfig */,
+				6F48A455B75CD4C14845F937 /* Pods-pubnudge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8033C05220FD140B009E61DD = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +96,8 @@
 				8033C07220FD140F009E61DD /* pubnudgeTests */,
 				8033C07D20FD140F009E61DD /* pubnudgeUITests */,
 				8033C05C20FD140B009E61DD /* Products */,
+				52B6F84B67BA9803C9FFE0E8 /* Pods */,
+				AC03989FCC2BE8C14D37F8FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +143,14 @@
 			path = pubnudgeUITests;
 			sourceTree = "<group>";
 		};
+		AC03989FCC2BE8C14D37F8FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3C36E9F3AC9B0638D741F37 /* Pods_pubnudge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8033C08320FD140F009E61DD /* Build configuration list for PBXNativeTarget "pubnudge" */;
 			buildPhases = (
+				3A84AE0AF61B16534D619181 /* [CP] Check Pods Manifest.lock */,
 				8033C05720FD140B009E61DD /* Sources */,
 				8033C05820FD140B009E61DD /* Frameworks */,
 				8033C05920FD140B009E61DD /* Resources */,
+				E09F3BA0C68F5B96735FE3C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,6 +284,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A84AE0AF61B16534D619181 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pubnudge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E09F3BA0C68F5B96735FE3C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-pubnudge/Pods-pubnudge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PubNub/PubNub.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PubNub.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pubnudge/Pods-pubnudge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8033C05720FD140B009E61DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -370,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -425,7 +490,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -437,12 +502,14 @@
 		};
 		8033C08420FD140F009E61DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7228ACBC12458EF236659B1 /* Pods-pubnudge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = pubnudge/pubnudge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8XP4D6N55Z;
 				INFOPLIST_FILE = pubnudge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,12 +523,14 @@
 		};
 		8033C08520FD140F009E61DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F48A455B75CD4C14845F937 /* Pods-pubnudge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = pubnudge/pubnudge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8XP4D6N55Z;
 				INFOPLIST_FILE = pubnudge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

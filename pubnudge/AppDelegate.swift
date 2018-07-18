@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import PubNub
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
 
     var window: UIWindow?
-
-
+    lazy var client: PubNub = {
+        let config = PNConfiguration(publishKey: "pub-c-e1295433-4475-476d-9e37-4bdb84dacba0", subscribeKey: "sub-c-890a0b26-6451-11e8-90b6-8e3ee2a92f04")
+        config.stripMobilePayload = false
+        let pub = PubNub.clientWithConfiguration(config)
+        return pub
+    }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        registerForPushNotifications()
         return true
     }
 
@@ -40,7 +48,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
+    func registerForPushNotifications() {
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+            (granted, error) in
+            print("Permission granted: \(granted)")
+            
+            guard granted else { return }
+            self.getNotificationSettings()
+        }
+    }
+    
+    
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings: \(settings)")
+            guard settings.authorizationStatus == .authorized else { return }
+            DispatchQueue.main.async(execute: {
+                UIApplication.shared.registerForRemoteNotifications()
+            })
+        }
+    }
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        UserDefaults.standard.set(deviceToken, forKey: "deviceToken")
+        self.client.addPushNotificationsOnChannels(["cash"],
+           withDevicePushToken: deviceToken,
+           andCompletion: { (status) in
+            
+            if !status.isError {
+                
+                // Handle successful push notification enabling on passed channels.
+            }
+            else {
+                
+                /**
+                 Handle modification error. Check 'category' property
+                 to find out possible reason because of which request did fail.
+                 Review 'errorData' property (which has PNErrorData data type) of status
+                 object to get additional information about issue.
+                 
+                 Request can be resent using: status.retry()
+                 */
+            }
+        })
+    }
+    
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
+    }
 
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
 }
 

@@ -1,0 +1,6 @@
+framework module Pods_pubnudge {
+  umbrella header "Pods-pubnudge-umbrella.h"
+
+  export *
+  module * { export * }
+}
